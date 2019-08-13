@@ -5,4 +5,4 @@ services:
 
 script:
     - docker build -t bluejamkmy/rime-docker .
-    - docker run --name rime-container bluejamkmy/rime-docker /bin/bash -c "git clone https://github.com/icpc-jag/rime.git; cd /rime/example; rime test"
+    - docker run --name rime-container -it bluejamkmy/rime-docker /bin/bash -i -c "git clone https://github.com/icpc-jag/rime.git; cd /rime/example; rime test"
