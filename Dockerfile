@@ -32,9 +32,9 @@ RUN /bin/bash -c '\
     -L https://github.com/python/cpython/archive/v3.7.4.tar.gz; \
   tar -xvf python.tar.gz; \
   cd cpython-3.7.4; \
-  ./configure --enable-shared; \
-  make; \
-  make install; \
+  ./configure --quiet --enable-shared; \
+  make --quiet; \
+  make install --quiet; \
   sh -c "echo '/usr/local/lib' > /etc/ld.so.conf.d/custom_python3.conf"; \
   ldconfig; \
   rm -R /python.tar.gz /cpython-3.7.4'
