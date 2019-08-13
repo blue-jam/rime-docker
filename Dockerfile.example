@@ -1,0 +1,5 @@
+FROM bluejamkmy/rime-docker
+
+COPY . /rime_project
+
+WORKDIR /rime_project

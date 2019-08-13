@@ -2,10 +2,9 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get -q -y update
-RUN apt-get -q -y install software-properties-common
+RUN apt-get -qq -y update && apt-get -qq -y install software-properties-common
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test
-RUN apt-get -q -y install \
+RUN apt-get -qq -y install \
       build-essential \
       curl \
       g++-9 \
@@ -46,6 +45,10 @@ RUN curl -s "https://get.sdkman.io" | bash
 RUN /bin/bash -c -l '\
   source $HOME/.sdkman/bin/sdkman-init.sh; \
   sdk install java; \
-  sdk install kotlin'
+  sdk install kotlin; \
+  ln -s $(which javac) /bin/javac; \
+  ln -s $(which java) /bin/java; \
+  ln -s $(which kotlin) /bin/kotlin; \
+  ln -s $(which kotlinc) /bin/kotlinc'
 
 RUN ln -s -f /usr/bin/g++-9 /usr/bin/g++

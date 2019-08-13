@@ -3,6 +3,12 @@ language: python
 services:
     - docker
 
+before_script:
+    - git clone https://github.com/icpc-jag/rime.git
+
 script:
     - docker build -t bluejamkmy/rime-docker .
-    - docker run --name rime-container -it bluejamkmy/rime-docker /bin/bash -i -c "git clone https://github.com/icpc-jag/rime.git; cd /rime/example; rime test"
+    - cp Dockerfile.example rime/example/Dockerfile
+    - cd rime/example
+    - docker build -t rime-example .
+    - docker run -it rime-example rime test
