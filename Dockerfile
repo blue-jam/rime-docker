@@ -29,7 +29,7 @@ RUN apt-get -qq -y install \
 RUN /bin/bash -c '\
   curl -o python.tar.gz \
     -L https://github.com/python/cpython/archive/v3.7.4.tar.gz; \
-  tar -xvf python.tar.gz; \
+  tar -xf python.tar.gz; \
   cd cpython-3.7.4; \
   ./configure --quiet --enable-shared; \
   make --quiet; \
