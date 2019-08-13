@@ -9,9 +9,10 @@ before_script:
 script:
     - docker build -t bluejamkmy/rime-docker .
     - cp Dockerfile.example rime/example/Dockerfile
-    - cd rime/example
+    - pushd rime/example
     - docker build -t rime-example .
     - docker run -it rime-example rime test
+    - popd
 
 deploy:
     provider: script
