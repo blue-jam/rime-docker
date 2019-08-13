@@ -2,13 +2,29 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get -y update
-RUN apt-get -y install software-properties-common
+RUN apt-get -q -y update
+RUN apt-get -q -y install software-properties-common
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test
-RUN apt-get -y install g++-9 build-essential libbz2-dev libdb-dev git \
-      libreadline-dev libffi-dev libgdbm-dev liblzma-dev libncursesw5-dev \
-      libsqlite3-dev libssl-dev zlib1g-dev uuid-dev tk-dev curl zip unzip \
-      python python-pip
+RUN apt-get -q -y install \
+      build-essential \
+      curl \
+      g++-9 \
+      libbz2-dev \
+      libdb-dev git \
+      libreadline-dev \
+      libffi-dev \
+      libgdbm-dev \
+      liblzma-dev \
+      libncursesw5-dev \
+      libsqlite3-dev \
+      libssl-dev \
+      python \
+      python-pip \
+      tk-dev \
+      unzip \
+      uuid-dev \
+      zip \
+      zlib1g-dev
 
 # Install Python3
 RUN /bin/bash -c '\
