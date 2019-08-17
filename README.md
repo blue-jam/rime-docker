@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/blue-jam/rime-docker.svg?branch=master)](https://travis-ci.org/blue-jam/rime-docker)
 
-A docker image including rime, C++, Java, Kotlin, and Python.
+A docker image including [rime](https://github.com/icpc-jag/rime), C++, Java, Kotlin, and Python.
 
 [Docker Hub](https://hub.docker.com/r/bluejamkmy/rime-docker)
 
@@ -10,13 +10,13 @@ A docker image including rime, C++, Java, Kotlin, and Python.
 
 You may have to run `docker` commands as a super user.
 
-1. Pull `rime-docker` image from Docker Hub by
+1. Pull `rime-docker` image from Docker Hub.
 
    ```
    $ docker pull bluejamkmy/rime-docker
    ```
 
-1. Save [`Dockerfile`](Dockerfile.example) in your rime project directory:
+1. Save [`Dockerfile`](Dockerfile.example) in your rime project directory.
 
    ```Dockerfile
    FROM bluejamkmy/rime-docker
@@ -26,14 +26,14 @@ You may have to run `docker` commands as a super user.
    WORKDIR /rime_project
    ```
 
-1. Build a docker image for your project by
+1. Build a docker image for your project.
 
    ```
    $ docker build -t myrime .
    ```
 
-1. Run your container by
+1. Run rime command in your container.
 
    ```
-   $ docker run -it myrime rime test
+   $ docker run -it --rm myrime rime test
    ```
