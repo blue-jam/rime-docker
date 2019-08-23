@@ -35,5 +35,5 @@ You may have to run `docker` commands as a super user.
 1. Run rime command in your container.
 
    ```
-   $ docker run -it --rm myrime rime test
+   $ docker run -it myrime rime test
    ```
