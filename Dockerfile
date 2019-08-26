@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -qq -y update && apt-get -qq -y install software-properties-common
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test
-RUN apt-get -qq -y install \
+RUN apt-get -qq -y update && apt-get -qq -y install \
       build-essential \
       curl \
       g++-9 \
