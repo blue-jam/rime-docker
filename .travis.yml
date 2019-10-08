@@ -18,4 +18,4 @@ jobs:
             - popd
         - stage: deploy
           script: curl -X POST ${BUILD_TRIGGER_URL} > /dev/null 2> /dev/null
-          if: branch = master
+          if: branch = master AND type = cron
